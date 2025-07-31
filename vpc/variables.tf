@@ -36,3 +36,8 @@ variable "availability_zone3" {
   type        = string
   default     = "us-east-2c"
 }
+variable "environment" {
+  description = "The environment for deployment"
+  type        = string
+  default     = "dev"
+}
