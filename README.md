@@ -1,7 +1,7 @@
-# terraform-module
+## terraform-module
 homework25
 
-```
+```hcl
 module "my-module" {
 source  = "erzhena-d/my-module/aws"
 version = "1.0.0"
