@@ -1,5 +1,10 @@
 # Here we declare variables and describe their types and descriptions
 
+variable "environment" {
+  description = "The environment for deployment"
+  type        = string
+  default     = "dev"
+}
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
@@ -36,8 +41,4 @@ variable "availability_zone3" {
   type        = string
   default     = "us-east-2c"
 }
-variable "environment" {
-  description = "The environment for deployment"
-  type        = string
-  default     = "dev"
-}
+
