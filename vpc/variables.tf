@@ -1,4 +1,4 @@
-# Here we declare variables and describe their types and descriptions
+// Here we declare variables and describe their types and descriptions
 
 variable "environment" {
   description = "The environment for deployment"
