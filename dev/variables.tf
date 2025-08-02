@@ -1,32 +1,36 @@
-variable "aws_region" {
-  type    = string
-  default = "us-east-1"
+variable "environment" {
+  type = string
 }
 
 variable "vpc_cidr" {
   type = string
 }
 
-variable "vpc_azs" {
-  type = list(string)
-}
-
-variable "availability_zone1" {
-  description = "The availability zone to deploy subnet 1 in"
-  type        = string
-  default     = "us-east-2a"
-}
-
-variable "subnet_cidrs" {
-  type = list(string)
-}
-
-variable "environment" {
+variable "subnet1_cidr" {
   type = string
 }
 
-variable "instance_count" {
-  type = number
+variable "subnet2_cidr" {
+  type = string
+}
+
+variable "subnet3_cidr" {
+  type = string
+}
+
+variable "availability_zone1" {
+  type    = string
+  default = "us-east-2a"
+}
+
+variable "availability_zone2" {
+  type    = string
+  default = "us-east-2b"
+}
+
+variable "availability_zone3" {
+  type    = string
+  default = "us-east-2c"
 }
 
 variable "instance_type" {
@@ -37,14 +41,3 @@ variable "ami_id" {
   type = string
 }
 
-variable "key_name" {
-  type = string
-}
-
-variable "subnet_ids" {
-  type = list(string)
-}
-
-variable "security_groups" {
-  type = list(string)
-}

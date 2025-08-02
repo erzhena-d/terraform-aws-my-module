@@ -46,6 +46,7 @@ resource "aws_internet_gateway" "igw" {
     Name = "${var.environment}-igw"
   }
 }
+
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.kaizen.id
 
@@ -55,7 +56,7 @@ resource "aws_route_table" "public_rt" {
   }
 
   tags = {
-    Name = "public_rt"
+    Name = "${var.environment}-public_rt"
   }
 }
 
