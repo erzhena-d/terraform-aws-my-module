@@ -1,12 +1,13 @@
-resource "aws_instance" "web2" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
-  key_name               = aws_key_pair.bastion_key.key_name
-  subnet_id              = [aws_subnet.subnet1.id, aws_subnet.subnet2.id, aws_subnet.subnet3.id]
-  vpc_security_group_ids = [aws_security_group.allow_tls.id]
+resource "aws_instance" "web" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  subnet_id                   = var.subnet_id
+  vpc_security_group_ids      = var.security_group_ids
+  associate_public_ip_address = true
 
   tags = {
-    Name = "${var.environment}-web2"
+    Name = "${var.environment}-web"
   }
 }
 

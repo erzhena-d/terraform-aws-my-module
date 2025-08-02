@@ -13,5 +13,13 @@ variable "instance_type" {
   type        = string
 }
 
+variable "subnet_id" {
+  description = "Subnet to launch instance in"
+  type        = string
+}
 
+variable "security_group_ids" {
+  description = "List of security group IDs"
+  type        = list(string)
+}
 

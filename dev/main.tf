@@ -29,15 +29,32 @@ module "vpc" {
 
 // Call the EC2 module to create an EC2 instance (assuming the module is defined in ../ec2)
 
-module "ec2" {
-  source          = "../ec2"
-  ami_id          = var.ami_id
-  instance_type   = var.instance_type
-  environment     = var.environment
-  subnet_id       = module.vpc.subnet1_id
-  security_groups = module.vpc.security_group_ids
+module "ec2_web1" {
+  source             = "../ec2"
+  ami_id             = var.ami_id
+  instance_type      = var.instance_type
+  environment        = var.environment
+  subnet_id          = module.vpc.subnet1_id
+  security_group_ids = module.vpc.security_group_ids
 }
 
+module "ec2_web2" {
+  source             = "../ec2"
+  ami_id             = var.ami_id
+  instance_type      = var.instance_type
+  environment        = var.environment
+  subnet_id          = module.vpc.subnet2_id
+  security_group_ids = module.vpc.security_group_ids
+}
+
+module "ec2_web3" {
+  source             = "../ec2"
+  ami_id             = var.ami_id
+  instance_type      = var.instance_type
+  environment        = var.environment
+  subnet_id          = module.vpc.subnet3_id
+  security_group_ids = module.vpc.security_group_ids
+}
 
 
 
