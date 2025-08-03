@@ -30,7 +30,6 @@ module "ec2_web1" {
   environment        = var.environment
   subnet_id          = module.vpc.subnet1_id
   security_group_ids = module.vpc.security_group_ids
-
 }
 
 module "ec2_web2" {
@@ -40,7 +39,6 @@ module "ec2_web2" {
   environment        = var.environment
   subnet_id          = module.vpc.subnet2_id
   security_group_ids = module.vpc.security_group_ids
-
 }
 
 module "ec2_web3" {
