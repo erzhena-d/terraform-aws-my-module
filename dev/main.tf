@@ -19,16 +19,9 @@ module "vpc" {
   environment = var.environment
   vpc_cidr    = var.vpc_cidr
   subnets     = var.subnets
-  # subnet1_cidr       = var.subnet1_cidr
-  # subnet2_cidr       = var.subnet2_cidr
-  # subnet3_cidr       = var.subnet3_cidr
-  # availability_zone1 = var.availability_zone1
-  # availability_zone2 = var.availability_zone2
-  # availability_zone3 = var.availability_zone3
-
 }
 
-// Call the EC2 module to create an EC2 instance (assuming the module is defined in ../ec2)
+// Call the EC2 module to create an EC2 instance in each subnet
 
 module "ec2_web1" {
   source             = "../ec2"
@@ -37,6 +30,7 @@ module "ec2_web1" {
   environment        = var.environment
   subnet_id          = module.vpc.subnet1_id
   security_group_ids = module.vpc.security_group_ids
+
 }
 
 module "ec2_web2" {
@@ -46,6 +40,7 @@ module "ec2_web2" {
   environment        = var.environment
   subnet_id          = module.vpc.subnet2_id
   security_group_ids = module.vpc.security_group_ids
+
 }
 
 module "ec2_web3" {
@@ -67,5 +62,8 @@ module "ec2_web3" {
 
 
 
-
-// elastic ip, function, place ec2 in private subnet, add user data script for wordpress, maybe separate modules for load balancer, asg, 
+// Additional resources can be added here, such as load balancers, auto-scaling groups, etc.
+// for for ec2 module to call it once and loop over subnets
+// create a ec2 in private subnet
+// add user data
+// readable documentation
