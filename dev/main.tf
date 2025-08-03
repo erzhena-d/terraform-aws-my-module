@@ -16,14 +16,15 @@ provider "aws" {
 module "vpc" {
   source = "../vpc"
 
-  environment        = var.environment
-  vpc_cidr           = var.vpc_cidr
-  subnet1_cidr       = var.subnet1_cidr
-  subnet2_cidr       = var.subnet2_cidr
-  subnet3_cidr       = var.subnet3_cidr
-  availability_zone1 = var.availability_zone1
-  availability_zone2 = var.availability_zone2
-  availability_zone3 = var.availability_zone3
+  environment = var.environment
+  vpc_cidr    = var.vpc_cidr
+  subnets     = var.subnets
+  # subnet1_cidr       = var.subnet1_cidr
+  # subnet2_cidr       = var.subnet2_cidr
+  # subnet3_cidr       = var.subnet3_cidr
+  # availability_zone1 = var.availability_zone1
+  # availability_zone2 = var.availability_zone2
+  # availability_zone3 = var.availability_zone3
 
 }
 
